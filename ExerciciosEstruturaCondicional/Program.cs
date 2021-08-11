@@ -7,8 +7,11 @@ namespace ExerciciosEstruturaCondicional
     {
         static void Main(string[] args)
         {
+
+            //Fazer um programa para ler um número inteiro,
+            //e depois dizer se este número é negativo ou não
             int valor;
-            Console.WriteLine("Entre com um valor: ");
+            Console.WriteLine("Entre com um valor para saber se é Negativo: ");
             valor = int.Parse(Console.ReadLine());
             if (valor < 0)
             {
@@ -18,6 +21,8 @@ namespace ExerciciosEstruturaCondicional
             {
                 Console.WriteLine("NÃO NEGATIVO");
             }
+
+
         }
     }
 }
