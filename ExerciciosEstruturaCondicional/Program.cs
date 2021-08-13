@@ -130,12 +130,28 @@ namespace ExerciciosEstruturaCondicional
             //Obviamente se o valor não estiver em
             // nenhum destes intervalos,
             //deverá ser impressa a mensagem “Fora de intervalo”
-            
-            
-            
 
+            Console.WriteLine("Insira um valor entre 0 e 100");
+            float valorEntre = float.Parse(Console.ReadLine());
 
-
+            if ((valorEntre > 0) && (valorEntre < 25))
+            {
+                Console.WriteLine("Valor entre 0 e 25");
+            }
+            else if (valorEntre < 50)
+            {
+                Console.WriteLine("Valor entre 26 e 50");
+            }
+            else if (valorEntre < 75)
+            {
+                Console.WriteLine("Valor entre 51 e 75");
+            }
+            else if (valorEntre < 100 )
+            {
+                Console.WriteLine("Valor entre 76 e 100");
+            }
+            else
+                Console.WriteLine("Fora do intervalo");
         }
     }
 }
