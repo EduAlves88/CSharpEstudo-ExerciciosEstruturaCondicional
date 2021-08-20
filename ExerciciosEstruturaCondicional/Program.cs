@@ -47,9 +47,9 @@ namespace ExerciciosEstruturaCondicional
             string[] vetValores = valIn.Split(' ');
             int val1 = int.Parse(vetValores[0]);
             int val2 = int.Parse(vetValores[1]);
-            float divisao = val1 / val2;
-            float restoDaDivisao = divisao % 2;
-            if (restoDaDivisao > 0)
+            int divisao = val1 % val2;
+
+            if (divisao > 0)
             {
                 Console.WriteLine("Não é Divisível!");
             }
@@ -132,7 +132,7 @@ namespace ExerciciosEstruturaCondicional
             //deverá ser impressa a mensagem “Fora de intervalo”
 
             Console.WriteLine("Insira um valor entre 0 e 100");
-            float valorEntre = float.Parse(Console.ReadLine());
+            float valorEntre = float.Parse(Console.ReadLine(), CultureInfo.InvariantCulture);
 
             if ((valorEntre > 0) && (valorEntre < 25))
             {
@@ -146,12 +146,61 @@ namespace ExerciciosEstruturaCondicional
             {
                 Console.WriteLine("Valor entre 51 e 75");
             }
-            else if (valorEntre < 100 )
+            else if (valorEntre < 100)
             {
                 Console.WriteLine("Valor entre 76 e 100");
             }
             else
                 Console.WriteLine("Fora do intervalo");
+
+            //Leia 2 valores com uma casa decimal(x e y), que devem representar as coordenadas
+            //de um ponto em um plano. A seguir, determine qual o quadrante ao qual pertence o
+            //ponto, ou se está sobre um dos eixos cartesianos ou na origem(x = y = 0).
+            //Se o ponto estiver na origem, escreva a mensagem “Origem”.
+            //Se o ponto estiver sobre um dos eixos escreva “Eixo X” ou “Eixo Y”, conforme for a
+            //situação
+            Console.WriteLine("Entre com os valores de x e y para saber o quadrante: ");
+            string xy = Console.ReadLine();
+            string[] parabola = xy.Split(' ');
+            float x = float.Parse(parabola[0]);
+            float y = float.Parse(parabola[1]);
+
+            if (x==0 && y==0)
+            {
+                Console.WriteLine("Origem");
+            }
+            else if (x==0)
+            {
+                Console.WriteLine("Eixo Y");
+            }
+            else if (y==0)
+            {
+                Console.WriteLine("Eixo X");
+            }
+            else if((x > 0) && (y > 0))
+            {
+                //Q1
+                Console.WriteLine("Quadrante Q1");
+            }
+            else if ((x < 0) && (y > 0))
+            {
+                //Q2
+                Console.WriteLine("Quadrante Q2");
+            }
+            else if ((x < 0) && (y < 0))
+            {
+                //Q3
+                Console.WriteLine("Quadrante Q3");
+            }
+            else if ((x > 0) && (y < 0))
+            {
+                //Q4
+                Console.WriteLine("Quadrante Q4");
+            }
+            else
+            {
+                Console.WriteLine("Ponto na Origem");
+            }
         }
     }
 }
